@@ -1,5 +1,5 @@
 # Image
-FROM php:8.0-cli
+FROM php:7.4-cli
 
 # Starting from scratch
 RUN apt-get clean
