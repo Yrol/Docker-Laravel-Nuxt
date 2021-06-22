@@ -1,5 +1,5 @@
 # Image
-FROM php:8.0-fpm
+FROM php:7.4-fpm
 
 # Starting from scratch
 RUN apt-get clean
@@ -26,9 +26,6 @@ RUN docker-php-ext-install gd
 # PostgreSQL
 RUN apt-get install -y libpq-dev && docker-php-ext-install pdo pdo_pgsql
 
-#PDO MySQL
-RUN docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable pdo_mysql
-
 # BC Math
 RUN docker-php-ext-install bcmath
 
@@ -36,9 +33,6 @@ RUN docker-php-ext-install bcmath
 RUN apt-get install -y zlib1g-dev libicu-dev g++ \
     && docker-php-ext-configure intl \
     && docker-php-ext-install intl
-
-#Enable bash
-RUN apk add --update bash && rm -rf /var/cache/apk/*
 
 # PHP Redis extension
 RUN pecl install redis
