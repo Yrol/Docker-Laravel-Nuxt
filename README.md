@@ -1,1 +1,1 @@
-##Dockerized template for Laravel + NUXT
+## Dockerized template for Laravel + NUXT
