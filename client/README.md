@@ -1,3 +1,3 @@
-### Client
+### Nuxt application directory
 
-- NUXT project will be generated / added in this directory.
+NUXT project will be generated / added within this directory.

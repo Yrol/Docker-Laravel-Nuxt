@@ -248,18 +248,19 @@ git-export:
 # Laravel
 install-laravel:
 	docker-compose down
-	# sudo rm -rf api
-	# mkdir api
+	sudo rm -rf api
+	mkdir api
 	docker-compose up -d
-	# docker-compose exec php composer create-project --prefer-dist laravel/laravel .
+	docker-compose exec php composer config -g repo.packagist composer https://packagist.org
+	docker-compose exec php composer create-project --prefer-dist laravel/laravel .
 	sudo chown -Rv ${USER} api
 	sudo chmod -R 777 api/bootstrap/cache
 	sudo chmod -R 777 api/storage
 	sudo rm api/.env
 	cp .env.api api/.env
-	# docker-compose exec php php artisan key:generate --ansi
-	# docker-compose exec php composer require predis/predis
-	# docker-compose exec php php artisan --version
+	docker-compose exec php php artisan key:generate --ansi
+	docker-compose exec php composer require predis/predis
+	docker-compose exec php php artisan --version
 
 # Nuxt
 install-nuxt:
@@ -270,7 +271,7 @@ install-nuxt:
 	cp .env.client client/.env
 	#sed -i "1i require('dotenv').config()" client/nuxt.config.js
 	docker-compose up -d
-	#docker-compose exec client npm info nuxt version
+	docker-compose exec client npm info nuxt version
 
 
 #-----------------------------------------------------------

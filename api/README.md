@@ -1,3 +1,3 @@
-### API
+### Laravel application directory
 
-- Laravel project will be generated / added in this directory.
+Laravel project will be generated / added within this directory.
