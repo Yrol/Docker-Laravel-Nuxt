@@ -64,8 +64,8 @@ client:
 
 # Clear file-based logs
 logs-clear:
-	sudo rm docker/dev/nginx/logs/*.log
-	sudo rm docker/dev/supervisor/logs/*.log
+	sudo rm docker/nginx/logs/*.log
+	sudo rm docker/supervisor/logs/*.log
 	sudo rm api/storage/logs/*.log
 
 #-----------------------------------------------------------
