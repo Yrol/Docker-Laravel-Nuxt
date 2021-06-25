@@ -66,9 +66,9 @@ Nuxt - [http://localhost:8081](http://localhost:8081)
 
 ## Usage
 
-Laravel base url is [http://localhost:8080](http://localhost:8080). All requests to Laravel API must be sent using to the url starting with `/api` prefix. Nginx server will proxy all requests with `/api` prefix to the node static server which serves the Nuxt.
+Application base url (fronend) will be [http://localhost:8080](http://localhost:8080). All requests to Laravel API must be sent using to the url starting with `/api` prefix. Nginx server will proxy all requests with `/api` prefix to the node static server which serves the Nuxt.
 
-There is also available [http://localhost:8081](http://localhost:8081) url which is handled by Laravel and should be used for testing purposes only.
+Also, the backend can be accessed using [http://localhost:8081](http://localhost:8081) which is handled by Laravel.
 
 ## Environment
 
@@ -94,7 +94,7 @@ docker-compose down
 
 ## Nuxt
 
-Your application is available at the [http://localhost:8080](http://localhost:8080) url.
+Nuxt application is available at [http://localhost:8080](http://localhost:8080).
 
 Take a look at `client/.env` file. There are two variables:
 
@@ -336,7 +336,7 @@ To view docker containers logs, use the command:
 # All containers
 docker-compose logs
 
-# Concrete container
+# Individual container
 docker-compose logs <container>
 ```
 
