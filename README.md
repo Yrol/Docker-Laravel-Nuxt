@@ -181,9 +181,7 @@ docker-compose restart client
 
 ## Laravel
 
-Laravel API URL [http://localhost:8080/api](http://localhost:8080/api).
-
-The URL [http://localhost:8081](http://localhost:8081) is also available and it is is handled by Laravel and should be used for testing purposes only.
+Laravel API URL [http://localhost:8081](http://localhost:8081).
 
 #### Artisan
 
