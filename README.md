@@ -60,9 +60,9 @@ make install
 
 **3. Once the above commands are executed successfully, the Laravel and Nuxt projects can be accessed using the follow URLs**
 
-Laravel - [http://localhost:8080](http://localhost:8080)
+Laravel - [http://localhost:8081](http://localhost:8081)
 
-Nuxt - [http://localhost:8081](http://localhost:8081)
+Nuxt - [http://localhost:8080](http://localhost:8080)
 
 ## Usage
 
