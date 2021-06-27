@@ -98,6 +98,10 @@ db-fresh:
 db-dump:
 	docker-compose exec postgres pg_dump -U app -d app > docker/postgres/dumps/dump.sql
 
+# Dump database into file - mysql
+db-dump-mysql:
+	docker-compose exec mysql /usr/bin/mysqldump -u root --password=app app > docker/mysql/dumps/dump.sql
+
 
 #-----------------------------------------------------------
 # Redis
