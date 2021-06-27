@@ -52,6 +52,23 @@ services:
       - redis
       - mailhog
 
+  # MySQL database container
+  mysql:
+    build:
+      context: docker/mysql
+      dockerfile: Dockerfile
+    volumes:
+      - mysql:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    expose: #exposing the port to  be used locally (with local MySQL clients such as MySQLWorkbench & ect)
+      - "3306"
+    environment:
+      MYSQL_DATABASE: app
+      MYSQL_USER: app
+      MYSQL_PASSWORD: app
+      MYSQL_ROOT_PASSWORD: app
+
   # PostgreSQL database container
   postgres:
     build:
@@ -59,7 +76,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       # Database volume
-      - database:/var/lib/postgresql/data
+      - postgres:/var/lib/postgresql/data
       # Temp volume to allow using dumps
       - ./docker/postgres/dumps/:/tmp/
     ports:
@@ -110,7 +127,9 @@ services:
 ######### Volumes ###################################
 
 volumes:
-  database:
+  postgres:
+    driver: local
+  mysql:
     driver: local
   redis:
     driver: local
