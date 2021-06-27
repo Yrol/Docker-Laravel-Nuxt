@@ -26,6 +26,9 @@ RUN docker-php-ext-install gd
 # PostgreSQL
 RUN apt-get install -y libpq-dev && docker-php-ext-install pdo pdo_pgsql
 
+#PDO MySQL
+RUN docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable pdo_mysql
+
 # BC Math
 RUN docker-php-ext-install bcmath
 
